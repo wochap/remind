@@ -488,13 +488,16 @@ static int OpenFile(char const *fname)
             fprintf(ErrFp, "%s\n", tr("Reading `-': Reading stdin"));
         }
     } else {
-        fp = fopen(fname, "r");
-        if (fp) {
-            set_cloexec(fileno(fp));
-        }
         if (DebugFlag & DB_TRACE_FILES) {
             fprintf(ErrFp, tr("Reading `%s': Opening file on disk"), fname);
             fprintf(ErrFp, "\n");
+        }
+        fp = fopen(fname, "r");
+        if (!fp) {
+            Eprint(tr("Can't open `%s' for reading: %s"), fname, strerror(errno));
+            return E_CANT_OPEN;
+        } else {
+            set_cloexec(fileno(fp));
         }
         if (PurgeMode) {
             OpenPurgeFile(fname, "w");
@@ -512,7 +515,11 @@ static int OpenFile(char const *fname)
         } else {
             if (strcmp(fname, "-")) {
                 fp = fopen(fname, "r");
-                if (!fp || !CheckSafety()) return E_CANT_OPEN;
+                if (!fp) {
+                    Eprint(tr("Can't open `%s' for reading: %s"), fname, strerror(errno));
+                    return E_CANT_OPEN;
+                }
+                if (!CheckSafety()) return E_CANT_OPEN;
                 set_cloexec(fileno(fp));
                 if (PurgeMode) OpenPurgeFile(fname, "w");
             } else {
@@ -713,7 +720,11 @@ static int PopFile(void)
         /* We must open the file, then seek to specified position */
         if (strcmp(i->filename, "-")) {
             fp = fopen(i->filename, "r");
-            if (!fp || !CheckSafety()) return E_CANT_OPEN;
+            if (!fp) {
+                Eprint(tr("Can't open `%s' for reading: %s"), i->filename, strerror(errno));
+                return E_CANT_OPEN;
+            }
+            if (!CheckSafety()) return E_CANT_OPEN;
             set_cloexec(fileno(fp));
             if (PurgeMode) OpenPurgeFile(i->filename, "a");
         } else {
@@ -1097,6 +1108,7 @@ static int IncludeCmd(char const *cmd)
         fp2 = popen(cmd, "r");
     }
     if (!fp2) {
+        Eprint(tr("Cannot execute `%s': %s"), (cmd[0] == '!' ? cmd+1 : cmd), strerror(errno));
         PopFile();
         DBufFree(&buf);
         if (stdin_dup >= 0) {

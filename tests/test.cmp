@@ -16180,7 +16180,7 @@ $Was is was
 # Catch an error fixed in commit 356b562d75852dafb2ffc6b1122500a98fa7d9d0
 IF 1
     INCLUDE /non/existent/file/should/not/work/wookie
-../tests/test.rem(1462): Can't open file: /non/existent/file/should/not/work/wookie
+../tests/test.rem(1462): Can't open `/non/existent/file/should/not/work/wookie' for reading: No such file or directory
 ENDIF
 
 do "with space.rem"
@@ -18532,7 +18532,7 @@ Caching file `../tests/include_dir/02.rem' in memory
 Reading `../tests/include_dir/subdir/04.rem': Opening file on disk
 Caching file `../tests/include_dir/subdir/04.rem' in memory
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 # translations
 {"LANGID":"en"}
@@ -18546,126 +18546,126 @@ Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 # fileinfo 1 ../tests/include_dir/01.rem
 2007/08/15 * * * * 01
@@ -18678,91 +18678,91 @@ Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `../tests/include_dir'
 Reading `../tests/include_dir/01.rem': Found in cache
 Reading `../tests/include_dir/02.rem': Found in cache
 Reading `../tests/include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-../tests/include_dir/02.rem(3): Can't open file: subdir/04.rem
+../tests/include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 # rem2ps end
 Test 9
@@ -18783,13 +18783,13 @@ Caching file `include_dir/02.rem' in memory
 Reading `include_dir/subdir/04.rem': Opening file on disk
 Caching file `include_dir/subdir/04.rem' in memory
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Scanning directory `include_dir_no_rems' for *.rem files
 Caching directory `include_dir_no_rems' listing
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 # translations
 {"LANGID":"en"}
 # rem2ps begin
@@ -18803,216 +18803,216 @@ Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 # fileinfo 1 include_dir/01.rem
 2007/08/15 * * * * 01
 # fileinfo 1 include_dir/02.rem
@@ -19027,156 +19027,156 @@ Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 Reading `../tests/include_test.rem': Found in cache
 Found cached directory listing for `include_dir'
 Reading `include_dir/01.rem': Found in cache
 Reading `include_dir/02.rem': Found in cache
 Reading `include_dir/subdir/04.rem': Found in cache
 Reading `subdir/04.rem': Opening file on disk
-include_dir/02.rem(3): Can't open file: subdir/04.rem
+include_dir/02.rem(3): Can't open `subdir/04.rem' for reading: No such file or directory
 Reading `include_dir/04cantread.rem': Opening file on disk
 Found cached directory listing for `include_dir_no_rems'
 ../tests/include_test.rem(2): include_dir_no_rems: No files matching *.rem
 Reading `nonexistent_include_dir': Opening file on disk
-../tests/include_test.rem(3): Can't open file: nonexistent_include_dir
+../tests/include_test.rem(3): Can't open `nonexistent_include_dir' for reading: No such file or directory
 # rem2ps end
 Feb 29 Bug Test
 -stdin-(1): Trig = Sunday, 3 March, 2024
@@ -25217,6 +25217,8 @@ TRANSLATE "Accepting \"%s\" for $Latitude/$Longitude, but you should use the \"C
 TRANSLATE "Caching directory `%s' listing" ""
 TRANSLATE "Caching file `%s' in memory" ""
 TRANSLATE "Called from" ""
+TRANSLATE "Can't open `%s' for reading: %s" ""
+TRANSLATE "Cannot execute `%s': %s" ""
 TRANSLATE "Cannot open `%s' for writing: %s" ""
 TRANSLATE "Cannot stat %s - not running as daemon!" ""
 TRANSLATE "Cannot use AT clause in multitrig() function" ""
