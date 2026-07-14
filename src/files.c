@@ -357,6 +357,12 @@ static int ReadLineFromFile(int use_pclose)
             DBufFree(&LineBuffer);
             return E_IO_ERR;
         }
+        if (use_pclose && MaxIncludeCmdLines > 0 && LineNo-1 > MaxIncludeCmdLines) {
+            DBufFree(&buf);
+            DBufFree(&LineBuffer);
+            return E_CMD_TOO_MUCH_OUTPUT;
+        }
+
         if (feof(fp) || force_eof) {
             if (use_pclose) {
                 PCLOSE(fp);
@@ -862,7 +868,7 @@ int DoIncludeCmd(ParsePtr p)
         return E_RUN_DISABLED;
     }
 
-    if ( (r=IncludeCmd(DBufValue(&buf))) ) {
+    if ( (r=IncludeCmd(DBufValue(&buf))) != 0) {
         DBufFree(&buf);
         return r;
     }
@@ -1148,7 +1154,7 @@ static int IncludeCmd(char const *cmd)
     DBufFree(&buf);
     /* We failed */
     PopFile();
-    return E_CANT_OPEN;
+    return r;
 }
 
 /***************************************************************/

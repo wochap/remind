@@ -141,6 +141,8 @@
 #define E_BAD_VAL_FOR_SYSVAR 117
 #define E_UNSET_BUILTIN_FUNC 118
 #define E_PUSH_BUILTIN_FUNC  119
+#define E_CMD_TOO_MUCH_OUTPUT 120
+
 #ifdef MK_GLOBALS
 #undef EXTERN
 #define EXTERN
@@ -277,6 +279,7 @@ EXTERN char *ErrMsg[]
 /* E_BAD_VAL_FOR_SYSVAR */ "Invalid value for system variable",
 /* E_UNSET_BUILTIN_FUNC */ "Attempt to unset built-in function",
 /* E_PUSH_BUILTIN_FUNC */  "Attempt to PUSH built-in function",
+/* E_CMD_TOO_MUCH_OUTPUT */ "INCLUDECMD produced too much output",
 }
 #endif /* MK_GLOBALS */
 ;

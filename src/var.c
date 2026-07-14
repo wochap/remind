@@ -1083,6 +1083,7 @@ static SysVar SysVarArr[] = {
     {"LongSec",        1,  SPECIAL_TYPE, longsec_func,         0,      0 },
     {"March",          1,  TRANS_TYPE,   "March",              0,      0 },
     {"MaxFullOmits",   0,  CONST_INT_TYPE, NULL,        MAX_FULL_OMITS, 0},
+    {"MaxIncludeCmdLines", 1, INT_TYPE,  &MaxIncludeCmdLines,  0,      ANY },
     {"MaxLateMinutes", 1,  INT_TYPE,     &MaxLateMinutes,      0,      MINUTES_PER_DAY },
     {"MaxPartialOmits",0,  CONST_INT_TYPE, NULL,    MAX_PARTIAL_OMITS, 0},
     {"MaxSatIter",     1,  INT_TYPE,     &MaxSatIter,          10,     ANY },

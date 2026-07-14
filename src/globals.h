@@ -97,6 +97,7 @@ EXTERN  INIT(   unsigned long  ExpressionNodesEvaluatedThisLine, 0);
 EXTERN  INIT(   unsigned long  ExpressionNodeLimitPerLine, 10000000);
 EXTERN  INIT(   volatile sig_atomic_t ExpressionTimeLimitExceeded, 0);
 EXTERN  INIT(   int     IgnoreOnce, 0);
+EXTERN  INIT(   int     MaxIncludeCmdLines, 10000);
 EXTERN  INIT(   char const *OnceFile, NULL);
 EXTERN  INIT(   int     OnceDate, -1);
 EXTERN  INIT(   int     ProcessedOnce, 0);

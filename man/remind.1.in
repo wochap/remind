@@ -3326,6 +3326,11 @@ If non-zero, then the \fB\-n\fR option was supplied on the command line.
 .B $MaxFullOmits (read-only)
 The maximum number of full OMITs allowed (a compiled-in constant.)
 .TP
+.B $MaxIncludeCmdLines
+The maximum number of lines \fBRemind\fR will read from an INCLUDECMD
+command.  If this is exceeded, an error is reported.  The default
+value is 10000.  If set to zero, then \fBRemind\fR imposes no limit.
+.TP
 .B $MaxPartialOmits (read-only)
 The maximum number of partial OMITs allowed (a compiled-in constant.)
 .TP

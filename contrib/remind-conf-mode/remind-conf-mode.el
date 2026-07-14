@@ -143,7 +143,7 @@
          "$IgnoreOnce" "$InfDelta" "$IntMax" "$IntMin" "$Is" "$January" "$JSONMode" "$July"
          "$June" "$LatDeg" "$Latitude" "$LatMin" "$LatSec" "$Location"
          "$LongDeg" "$Longitude" "$LongMin" "$LongSec" "$March" "$MaxFullOmits"
-         "$MaxLateMinutes" "$MaxPartialOmits" "$MaxSatIter" "$MaxStringLen"
+         "$MaxIncludeCmdLines" "$MaxLateMinutes" "$MaxPartialOmits" "$MaxSatIter" "$MaxStringLen"
          "$May" "$MinsFromUTC" "$Minute" "$Monday" "$Mplu" "$NextMode"
          "$November" "$Now" "$NumFullOmits" "$NumPartialOmits" "$NumQueued"
          "$NumTrig" "$October" "$On" "$OnceFile" "$ParseUntriggered" "$Pm"
