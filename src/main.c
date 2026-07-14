@@ -326,7 +326,7 @@ static void DoReminders(void)
     }
 
     if (FileAccessDate < 0) {
-        fprintf(ErrFp, "%s: `%s': %s.\n", GetErr(E_CANTACCESS), InitialFile, strerror(errno));
+        fprintf(ErrFp, "%s: `%s': %s.\n", GetErr(E_CANTOPEN), InitialFile, strerror(errno));
         exit(EXIT_FAILURE);
     }
 

@@ -103,7 +103,7 @@
 #define E_LEAVE_FUN          79
 #define E_EXPIRED            80
 #define E_CANTFORK           81
-#define E_CANTACCESS         82
+#define E_CANTOPEN           82
 #define M_BAD_SYS_DATE       83
 #define M_BAD_DB_FLAG        84
 #define M_BAD_OPTION         85
@@ -239,7 +239,7 @@ EXTERN char *ErrMsg[]
 /* E_LEAVE_FUN */         "Leaving UserFN",
 /* E_EXPIRED */           "Expired",
 /* E_CANTFORK */          "fork() failed - can't do queued reminders",
-/* E_CANTACCESS */        "Can't access file",
+/* E_CANTOPEN */          "Can't open file",
 /* M_BAD_SYS_DATE */      "Illegal system date: Year is less than %d",
 /* M_BAD_DB_FLAG */       "Unknown debug flag '%c'",
 /* M_BAD_OPTION */        "Unknown option '%c'",
