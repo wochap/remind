@@ -282,8 +282,8 @@ BuiltinFunc Func[] = {
     {   "baseyr",       0,      0,      1,          FBaseyr, NULL },
     {   "catch",        2,      2,      1,          NULL, FCatch }, /* NEW-STYLE */
     {   "catcherr",     0,      0,      0,          FCatchErr, NULL },
-    {   "char",         1,      NO_MAX, 1,          FChar, NULL },
-    {   "choose",       2,      NO_MAX, 1,          NULL, FChoose }, /*NEW-STYLE*/
+    {   "char",         1,      NO_MAX_ARGS, 1,     FChar, NULL },
+    {   "choose",       2,      NO_MAX_ARGS, 1,     NULL, FChoose }, /*NEW-STYLE*/
     {   "codepoint",    1,      1,      1,          FCodepoint, NULL },
     {   "coerce",       2,      2,      1,          FCoerce, NULL },
     {   "columns",      0,      1,      0,          FColumns, NULL },
@@ -315,9 +315,9 @@ BuiltinFunc Func[] = {
     {   "hour",         1,      1,      1,          FHour, NULL },
     {   "htmlescape",   1,      1,      1,          FHtmlEscape, NULL },
     {   "htmlstriptags",1,      1,      1,          FHtmlStriptags, NULL },
-    {   "iif",          1,      NO_MAX, 1,          NULL, FIif }, /*NEW-STYLE*/
+    {   "iif",          1,      NO_MAX_ARGS, 1,     NULL, FIif }, /*NEW-STYLE*/
     {   "index",        2,      3,      1,          FIndex, NULL },
-    {   "isany",        1,      NO_MAX, 1,          NULL, FIsAny }, /*NEW-STYLE*/
+    {   "isany",        1,      NO_MAX_ARGS, 1,     NULL, FIsAny }, /*NEW-STYLE*/
     {   "isconst",      1,      1,      1,          NULL, FIsconst }, /*NEW-STYLE*/
     {   "isdst",        0,      2,      0,          FIsdst, NULL },
     {   "isleap",       1,      1,      1,          FIsleap, NULL },
@@ -326,15 +326,15 @@ BuiltinFunc Func[] = {
     {   "language",     0,      0,      1,          FLanguage, NULL },
     {   "localtoutc",   1,      1,      1,          FLocalToUTC, NULL },
     {   "lower",        1,      1,      1,          FLower, NULL },
-    {   "max",          1,      NO_MAX, 1,          FMax, NULL },
-    {   "mbchar",       1,      NO_MAX, 1,          FMbchar, NULL },
+    {   "max",          1,      NO_MAX_ARGS, 1,     FMax, NULL },
+    {   "mbchar",       1,      NO_MAX_ARGS, 1,     FMbchar, NULL },
     {   "mbindex",      2,      3,      1,          FMbindex, NULL },
     {   "mblower",      1,      1,      1,          FMblower, NULL },
     {   "mbpad",        3,      4,      1,          FMbpad, NULL },
     {   "mbstrlen",     1,      1,      1,          FMbstrlen, NULL },
     {   "mbsubstr",     2,      3,      1,          FMbsubstr, NULL },
     {   "mbupper",      1,      1,      1,          FMbupper, NULL },
-    {   "min",          1,      NO_MAX, 1,          FMin, NULL },
+    {   "min",          1,      NO_MAX_ARGS, 1,     FMin, NULL },
     {   "minsfromutc",  0,      2,      0,          FMinsfromutc, NULL },
     {   "minute",       1,      1,      1,          FMinute, NULL },
     {   "mon",          1,      1,      1,          FMon, NULL },
@@ -347,11 +347,11 @@ BuiltinFunc Func[] = {
     {   "moonset",      0,      1,      0,          FMoonset, NULL },
     {   "moonsetdir",   0,      1,      0,          FMoonsetdir, NULL },
     {   "moontime",     1,      3,      0,          FMoontime, NULL },
-    {   "multitrig",    1,      NO_MAX, 0,          FMultiTrig, NULL },
+    {   "multitrig",    1,      NO_MAX_ARGS, 0,     FMultiTrig, NULL },
     {   "ndawn",        0,      1,      0,          FNDawn, NULL },
     {   "ndusk",        0,      1,      0,          FNDusk, NULL },
     {   "nonconst",     1,      1,      0,          FNonconst, NULL },
-    {   "nonomitted",   2,      NO_MAX, 0,          FNonomitted, NULL },
+    {   "nonomitted",   2,      NO_MAX_ARGS, 0,     FNonomitted, NULL },
     {   "now",          0,      0,      0,          FNow, NULL },
     {   "ord",          1,      1,      1,          FOrd, NULL },
     {   "orthodoxeaster",0,     1,      0,          FOrthodoxeaster, NULL },
@@ -367,7 +367,7 @@ BuiltinFunc Func[] = {
     {   "sgn",          1,      1,      1,          FSgn, NULL },
     {   "shell",        1,      2,      0,          FShell, NULL },
     {   "shellescape",  1,      1,      1,          FShellescape, NULL },
-    {   "slide",        2,      NO_MAX, 0,          FSlide, NULL },
+    {   "slide",        2,      NO_MAX_ARGS, 0,     FSlide, NULL },
     {   "soleq",        1,      2,      0,          FSoleq, NULL },
     {   "stdout",       0,      0,      0,          FStdout, NULL },
     {   "strlen",       1,      1,      1,          FStrlen, NULL },
@@ -378,7 +378,7 @@ BuiltinFunc Func[] = {
     {   "timepart",     1,      1,      1,          FTimepart, NULL },
     {   "timezone",     0,      1,      0,          FTimezone, NULL },
     {   "today",        0,      0,      0,          FToday, NULL },
-    {   "trig",         0,      NO_MAX, 0,          FTrig, NULL },
+    {   "trig",         0,      NO_MAX_ARGS, 0,     FTrig, NULL },
     {   "trigback",     0,      0,      0,          FTrigback, NULL },
     {   "trigbase",     0,      0,      0,          FTrigbase, NULL },
     {   "trigcompletethrough", 0, 0,    0,          FTrigcompletethrough, NULL },

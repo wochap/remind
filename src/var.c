@@ -1021,8 +1021,8 @@ int DoPreserve (Parser *p)
    to be a flag indicating whether or not the value has been malloc'd. */
 #define been_malloced min
 
-/* Flag for no min/max constraint */
-#define ANY -31415926
+/* Flag for no max constraint */
+#define INFINITY INT_MAX
 
 /* All of the system variables sorted alphabetically */
 static SysVar SysVarArr[] = {
@@ -1083,12 +1083,12 @@ static SysVar SysVarArr[] = {
     {"LongSec",        1,  SPECIAL_TYPE, longsec_func,         0,      0 },
     {"March",          1,  TRANS_TYPE,   "March",              0,      0 },
     {"MaxFullOmits",   0,  CONST_INT_TYPE, NULL,        MAX_FULL_OMITS, 0},
-    {"MaxIncludeCmdLines", 1, INT_TYPE,  &MaxIncludeCmdLines,  0,      ANY },
+    {"MaxIncludeCmdLines", 1, INT_TYPE,  &MaxIncludeCmdLines,  0,      INFINITY },
     {"MaxLateMinutes", 1,  INT_TYPE,     &MaxLateMinutes,      0,      MINUTES_PER_DAY },
-    {"MaxLineLength",  1,  INT_TYPE,     &MaxLineLength,       0,      ANY },
+    {"MaxLineLength",  1,  INT_TYPE,     &MaxLineLength,       0,      INFINITY },
     {"MaxPartialOmits",0,  CONST_INT_TYPE, NULL,    MAX_PARTIAL_OMITS, 0},
-    {"MaxSatIter",     1,  INT_TYPE,     &MaxSatIter,          10,     ANY },
-    {"MaxStringLen",   1,  INT_TYPE,     &MaxStringLen,        -1,     ANY },
+    {"MaxSatIter",     1,  INT_TYPE,     &MaxSatIter,          10,     INFINITY },
+    {"MaxStringLen",   1,  INT_TYPE,     &MaxStringLen,        -1,     INFINITY },
     {"May",            1,  TRANS_TYPE,   "May",                0,      0 },
     {"MinsFromUTC",    1,  INT_TYPE,     &MinsFromUTC,         -780,   780 },
     {"Minute",         1,  TRANS_TYPE,   "minute",             0,      0 },
@@ -1470,8 +1470,8 @@ static int SetSysVarHelper(SysVar *v, Value *value)
         return OK;
 
     default:
-        if (v->max != ANY && value->v.val > v->max) return E_2HIGH;
-        if (v->min != ANY && value->v.val < v->min) return E_2LOW;
+        if (v->max != INFINITY && value->v.val > v->max) return E_2HIGH;
+        if (value->v.val < v->min) return E_2LOW;
         *((int *)v->value) = value->v.val;
         return OK;
     }
@@ -1649,10 +1649,9 @@ static void DumpSysVar(char const *name, SysVar const *v)
             if (!v->modifiable) fprintf(ErrFp, "%d\n", *((int *)v->value));
             else {
                 fprintf(ErrFp, "%-10d  ", *((int *)v->value));
-                if (v->min == ANY) fprintf(ErrFp, "(-Inf, ");
-                else                         fprintf(ErrFp, "[%d, ", v->min);
-                if (v->max == ANY) fprintf(ErrFp, "Inf)\n");
-                else                         fprintf(ErrFp, "%d]\n", v->max);
+                fprintf(ErrFp, "[%d, ", v->min);
+                if (v->max == INFINITY) fprintf(ErrFp, "Inf)\n");
+                else                    fprintf(ErrFp, "%d]\n", v->max);
             }
         }
     } else   fprintf(ErrFp, "%s\n", UNDEF);

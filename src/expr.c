@@ -488,7 +488,7 @@ eval_builtin(expr_node *node, Value *locals, Value *ans, int *nonconst)
         Eprint("%s(): %s", f->name, GetErr(E_2FEW_ARGS));
         return E_2FEW_ARGS;
     }
-    if (node->num_kids > f->maxargs && f->maxargs != NO_MAX) {
+    if (node->num_kids > f->maxargs && f->maxargs != NO_MAX_ARGS) {
         Eprint("%s(): %s", f->name, GetErr(E_2MANY_ARGS));
         return E_2MANY_ARGS;
     }
@@ -2040,7 +2040,7 @@ static expr_node * parse_function_call(char const **e, int *r, Var *locals, int 
             *e = ptr;
             *r = E_2FEW_ARGS;
         }
-        if (node->num_kids > f->maxargs && f->maxargs != NO_MAX) {
+        if (node->num_kids > f->maxargs && f->maxargs != NO_MAX_ARGS) {
             *e = ptr;
             *r = E_2MANY_ARGS;
         }

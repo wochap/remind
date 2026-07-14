@@ -231,7 +231,7 @@ typedef Parser *ParsePtr;  /* Pointer to parser structure */
 #define PASSTHRU_TYPE 8
 
 /* For function arguments */
-#define NO_MAX 127
+#define NO_MAX_ARGS 127
 
 /* DEFINES for debugging flags */
 #define DB_PRTLINE      0x0001
