@@ -8,6 +8,7 @@
 0x1F
 0xFE12
 0xfe00
+10MB
 10x14
 12string7
 13ths
@@ -264,6 +265,7 @@ Matariki
 MaxFullOmits
 MaxIncludeCmdLines
 MaxLateMinutes
+MaxLineLength
 MaxPartialOmits
 MaxSatIter
 MaxStringLen

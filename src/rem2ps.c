@@ -322,7 +322,7 @@ int main(int argc, char const *argv[])
     int first_line = 1;
     /* Search for a valid input file */
     while (!feof(stdin)) {
-        DBufGets(&buf, stdin);
+        DBufGets(&buf, stdin, 0);
         if (first_line && (!strcmp(DBufValue(&buf), "["))) {
             fprintf(stderr, "Rem2PS: It appears that you have invoked Remind with the -ppp option.\n        Please use either -p or -pp, but not -ppp.  Also, Rem2PS does\n        not support weekly calendars, so do not use -p+ or -pp+.\n");
             exit(EXIT_FAILURE);
@@ -372,7 +372,7 @@ static void DoPsCal(void)
 /* Read the month and year name, followed by # days in month and 1st day of
    month */
     DBufInit(&buf);
-    DBufGets(&buf, stdin);
+    DBufGets(&buf, stdin, 0);
     sscanf(DBufValue(&buf), "%39s %39s %d %d %d", month, year, &days, &wkday,
            &MondayFirst);
 
@@ -384,7 +384,7 @@ static void DoPsCal(void)
     }
 
     /* Get day names */
-    DBufGets(&buf, stdin);
+    DBufGets(&buf, stdin, 0);
     sscanf(DBufValue(&buf), "%32s %32s %32s %32s %32s %32s %32s",
            DayName[0], DayName[1], DayName[2], DayName[3],
            DayName[4], DayName[5], DayName[6]);
@@ -404,9 +404,9 @@ static void DoPsCal(void)
         WriteProlog();
     }
 
-    DBufGets(&buf, stdin);
+    DBufGets(&buf, stdin, 0);
     sscanf(DBufValue(&buf), "%39s %d", prevm, &prevdays);
-    DBufGets(&buf, stdin);
+    DBufGets(&buf, stdin, 0);
     sscanf(DBufValue(&buf), "%39s %d", nextm, &nextdays);
 
     /* Replace underscores with spaces in names of next/prev month */
@@ -472,7 +472,7 @@ static void DoPsCal(void)
             exit(EXIT_FAILURE);
         }
 
-        DBufGets(&buf, stdin);
+        DBufGets(&buf, stdin, 0);
         if (!strcmp(DBufValue(&buf), PSEND) ||
             !strcmp(DBufValue(&buf), PSEND2)) {
             DBufFree(&buf);

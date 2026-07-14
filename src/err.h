@@ -142,6 +142,7 @@
 #define E_UNSET_BUILTIN_FUNC 118
 #define E_PUSH_BUILTIN_FUNC  119
 #define E_CMD_TOO_MUCH_OUTPUT 120
+#define E_LINE_TOO_LONG     121
 
 #ifdef MK_GLOBALS
 #undef EXTERN
@@ -217,7 +218,7 @@ EXTERN char *ErrMsg[]
 /* E_TODO_TWICE */        "TODO specified twice",
 /* E_2MANY_FULL */        "Too many full OMITs (max. " STR(MAX_FULL_OMITS) ")",
 /* E_PUSH_NOPOP */        "Warning: PUSH-OMIT-CONTEXT without matching POP-OMIT-CONTEXT",
-/* E_ERR_READING */       "Error reading",
+/* E_ERR_READING */       "Error reading input",
 /* E_EXPECTING_EOL */     "Expecting end-of-line",
 /* E_BAD_HEBDATE */       "Invalid Hebrew date",
 /* E_IIF_ODD */           "iif(): odd number of arguments required",
@@ -280,6 +281,7 @@ EXTERN char *ErrMsg[]
 /* E_UNSET_BUILTIN_FUNC */ "Attempt to unset built-in function",
 /* E_PUSH_BUILTIN_FUNC */  "Attempt to PUSH built-in function",
 /* E_CMD_TOO_MUCH_OUTPUT */ "INCLUDECMD produced too much output",
+/* E_LINE_TOO_LONG */      "Input line too long",
 }
 #endif /* MK_GLOBALS */
 ;

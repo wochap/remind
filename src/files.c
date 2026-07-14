@@ -291,7 +291,7 @@ int ReadLine(void)
 /***************************************************************/
 static int ReadLineFromFile(int use_pclose)
 {
-    int l;
+    int l, r;
     char copy_buffer[4096];
     size_t n;
     int force_eof = 0;
@@ -344,9 +344,10 @@ static int ReadLineFromFile(int use_pclose)
             }
         } else {
 #endif
-        if (DBufGets(&buf, fp) != OK) {
+        if ((r = DBufGets(&buf, fp, MaxLineLength)) != OK) {
+            LineNo++;
             DBufFree(&LineBuffer);
-            return E_NO_MEM;
+            return r;
         }
 #ifdef USE_READLINE
         }
@@ -396,6 +397,11 @@ static int ReadLineFromFile(int use_pclose)
                     return E_NO_MEM;
                 }
             }
+            if (MaxLineLength > 0 && DBufLen(&LineBuffer) > (size_t) MaxLineLength) {
+                    DBufFree(&buf);
+                    DBufFree(&LineBuffer);
+                    return E_LINE_TOO_LONG;
+            }
             continue;
         }
         if (DBufPuts(&LineBuffer, DBufValue(&buf)) != OK) {
@@ -404,6 +410,10 @@ static int ReadLineFromFile(int use_pclose)
             return E_NO_MEM;
         }
         DBufFree(&buf);
+        if (MaxLineLength > 0 && DBufLen(&LineBuffer) > (size_t) MaxLineLength) {
+            DBufFree(&LineBuffer);
+            return E_LINE_TOO_LONG;
+        }
 
         /* If the line is: __EOF__ treat it as end-of-file */
         CurLine = DBufValue(&LineBuffer);

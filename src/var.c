@@ -1085,6 +1085,7 @@ static SysVar SysVarArr[] = {
     {"MaxFullOmits",   0,  CONST_INT_TYPE, NULL,        MAX_FULL_OMITS, 0},
     {"MaxIncludeCmdLines", 1, INT_TYPE,  &MaxIncludeCmdLines,  0,      ANY },
     {"MaxLateMinutes", 1,  INT_TYPE,     &MaxLateMinutes,      0,      MINUTES_PER_DAY },
+    {"MaxLineLength",  1,  INT_TYPE,     &MaxLineLength,       0,      ANY },
     {"MaxPartialOmits",0,  CONST_INT_TYPE, NULL,    MAX_PARTIAL_OMITS, 0},
     {"MaxSatIter",     1,  INT_TYPE,     &MaxSatIter,          10,     ANY },
     {"MaxStringLen",   1,  INT_TYPE,     &MaxStringLen,        -1,     ANY },

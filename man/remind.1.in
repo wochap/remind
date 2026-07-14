@@ -3331,6 +3331,13 @@ The maximum number of lines \fBRemind\fR will read from an INCLUDECMD
 command.  If this is exceeded, an error is reported.  The default
 value is 10000.  If set to zero, then \fBRemind\fR imposes no limit.
 .TP
+.B $MaxLineLength
+The maximum length in bytes of an input line, including all continuations.
+Note that if a line exceeds this length, \fBRemind\fR prints an error
+message \fIand exits immediately.\fR.  The default value is
+10485760, equivalent to 10MB.  If set to zero, then \fBRemind\fR imposes
+no limit on the length of an input line.
+.TP
 .B $MaxPartialOmits (read-only)
 The maximum number of partial OMITs allowed (a compiled-in constant.)
 .TP

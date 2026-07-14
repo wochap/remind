@@ -147,13 +147,14 @@ void DBufFree(DynamicBuffer *dbuf)
 %ARGUMENTS:
  dbuf -- pointer to a dynamic buffer
  fp -- file to read from
+ maxlen - Maximam lenght of resulting buffer. 0 = no limit
 %RETURNS:
  OK or E_NO_MEM
 %DESCRIPTION:
  Reads an entire line from a file and appends to dbuf.  Does not include
  trailing newline.
 **********************************************************************/
-int DBufGets(DynamicBuffer *dbuf, FILE *fp)
+int DBufGets(DynamicBuffer *dbuf, FILE *fp, int maxlen)
 {
     char tmp[256]; /* Safe to hard-code */
     int busy = 1;
@@ -173,6 +174,9 @@ int DBufGets(DynamicBuffer *dbuf, FILE *fp)
     if (dbuf->buffer[l] == '\n') {
         dbuf->buffer[l] = 0;
         dbuf->len = l;
+        if (maxlen > 0 && dbuf->len > (size_t) maxlen) {
+            return E_LINE_TOO_LONG;
+        }
         return OK;
     }
 
@@ -186,6 +190,9 @@ int DBufGets(DynamicBuffer *dbuf, FILE *fp)
             busy = 0;
         }
         if (DBufPuts(dbuf, tmp) != OK) return E_NO_MEM;
+        if (maxlen > 0 && dbuf->len > (size_t) maxlen) {
+            return E_LINE_TOO_LONG;
+        }
     }
     return OK;
 }

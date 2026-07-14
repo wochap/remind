@@ -1075,6 +1075,16 @@ INCLUDECMD echo REM MSG 1; echo REM MSG 2
 INCLUDECMD echo REM MSG 1; echo REM MSG 2; echo REM MSG 3
 EOF
 
+# MaxLineLength
+$REMIND - 2026-09-09 <<'EOF' >> $OUT 2>&1
+SET $MaxLineLength 20
+SET $AddBlankLines 0
+BANNER %
+REM MSG short
+REM MSG Here is a significantly longer line.  Oh no!!
+REM MSG and another short line
+EOF
+
 cmp -s $OUT $CMP
 if [ "$?" = "0" ]; then
    echo "Remind:  Acceptance tests ${GRN}PASSED${NRM}"

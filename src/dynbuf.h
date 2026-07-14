@@ -27,7 +27,7 @@ void DBufInit(DynamicBuffer *dbuf);
 int DBufPutcFN(DynamicBuffer *dbuf, char c);
 int DBufPuts(DynamicBuffer *dbuf, char const *str);
 void DBufFree(DynamicBuffer *dbuf);
-int DBufGets(DynamicBuffer *dbuf, FILE *fp);
+int DBufGets(DynamicBuffer *dbuf, FILE *fp, int maxlen);
 
 void DBufGetMallocStats(size_t *num_mallocs, size_t *bytes_malloced);
 

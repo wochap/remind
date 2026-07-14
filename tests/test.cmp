@@ -18768,10 +18768,10 @@ Reading `../tests/include_dir/04cantread.rem': Opening file on disk
 Test 9
 
 Reading `../tests/nonexistent_include_dir': Opening file on disk
-Error reading ../tests/nonexistent_include_dir: Can't open file
+Error reading input ../tests/nonexistent_include_dir: Can't open file
 Scanning directory `../tests/include_dir_no_rems' for *.rem files
 Caching directory `../tests/include_dir_no_rems' listing
-Error reading ../tests/include_dir_no_rems: No files matching *.rem
+Error reading input ../tests/include_dir_no_rems: No files matching *.rem
 Reading `../tests/include_test.rem': Opening file on disk
 Caching file `../tests/include_test.rem' in memory
 Scanning directory `include_dir' for *.rem files
@@ -23830,9 +23830,9 @@ Foo tomorrow
 
 No reminders.
 SECURITY: Won't read world-writable file or directory!
-Error reading include_dir/ww: Can't open file
+Error reading input include_dir/ww: Can't open file
 SECURITY: Won't read world-writable file or directory!
-Error reading include_dir/ww: No files matching *.rem
+Error reading input include_dir/ww: No files matching *.rem
 06.02.08
 Enabling test mode: This is meant for the acceptance test.
 Do not use --test in production.
@@ -24929,6 +24929,7 @@ $March
 $MaxFullOmits
 $MaxIncludeCmdLines
 $MaxLateMinutes
+$MaxLineLength
 $MaxPartialOmits
 $MaxSatIter
 $MaxStringLen
@@ -25144,7 +25145,7 @@ TRANSLATE "Must specify month in OMIT command" ""
 TRANSLATE "TODO specified twice" ""
 TRANSLATE "Too many full OMITs (max. 1000)" ""
 TRANSLATE "Warning: PUSH-OMIT-CONTEXT without matching POP-OMIT-CONTEXT" ""
-TRANSLATE "Error reading" ""
+TRANSLATE "Error reading input" ""
 TRANSLATE "Expecting end-of-line" ""
 TRANSLATE "Invalid Hebrew date" ""
 TRANSLATE "iif(): odd number of arguments required" ""
@@ -25207,6 +25208,7 @@ TRANSLATE "Invalid value for system variable" ""
 TRANSLATE "Attempt to unset built-in function" ""
 TRANSLATE "Attempt to PUSH built-in function" ""
 TRANSLATE "INCLUDECMD produced too much output" ""
+TRANSLATE "Input line too long" ""
 
 # Other Messages
 TRANSLATE "%s function `%s' defined at %s(%s) does not use its argument" ""
@@ -40379,3 +40381,5 @@ Event: (in 2 days' time at 12:02pm) 1=2 days, 22 hours and 2 minutes from now 3=
 1
 2
 -stdin-(5): INCLUDECMD produced too much output
+short
+-stdin-(5): Error reading input: Input line too long
