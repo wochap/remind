@@ -1148,6 +1148,8 @@ static int IncludeCmd(char const *cmd)
         LineNo = 0;
         LineNoStart = 0;
         SetCurrentFilename(fname);
+        /* Can only free buf AFTER we set the filename
+           because fname points into buf */
         DBufFree(&buf);
         return OK;
     }
