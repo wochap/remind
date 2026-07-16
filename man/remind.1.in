@@ -3331,6 +3331,12 @@ The maximum number of lines \fBRemind\fR will read from an INCLUDECMD
 command.  If this is exceeded, an error is reported.  The default
 value is 10000.  If set to zero, then \fBRemind\fR imposes no limit.
 .TP
+.B $MaxCachedLines
+In Calendar Mode, \fBRemind\fR will cache files in memory.  However,
+if a given file is longer than $MaxCachedLines, then it will
+not be cached, but instead re-read from disk each time.  The default
+value of $MaxCachedLines is 1000000 (1 million).
+.TP
 .B $MaxLineLength
 The maximum length in bytes of an input line, including all continuations.
 Note that if a line exceeds this length, \fBRemind\fR prints an error

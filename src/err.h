@@ -143,7 +143,7 @@
 #define E_PUSH_BUILTIN_FUNC  119
 #define E_CMD_TOO_MUCH_OUTPUT 120
 #define E_LINE_TOO_LONG     121
-
+#define E_TOO_MANY_CACHED_LINES 122
 #ifdef MK_GLOBALS
 #undef EXTERN
 #define EXTERN
@@ -282,6 +282,7 @@ EXTERN char *ErrMsg[]
 /* E_PUSH_BUILTIN_FUNC */  "Attempt to PUSH built-in function",
 /* E_CMD_TOO_MUCH_OUTPUT */ "INCLUDECMD produced too much output",
 /* E_LINE_TOO_LONG */      "Input line too long",
+/* E_TOO_MANY_CACHED_LINES */ "Too many cached lines",
 }
 #endif /* MK_GLOBALS */
 ;

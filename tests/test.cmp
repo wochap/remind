@@ -24926,6 +24926,7 @@ $Longitude
 $LongMin
 $LongSec
 $March
+$MaxCachedLines
 $MaxFullOmits
 $MaxIncludeCmdLines
 $MaxLateMinutes
@@ -25209,6 +25210,7 @@ TRANSLATE "Attempt to unset built-in function" ""
 TRANSLATE "Attempt to PUSH built-in function" ""
 TRANSLATE "INCLUDECMD produced too much output" ""
 TRANSLATE "Input line too long" ""
+TRANSLATE "Too many cached lines" ""
 
 # Other Messages
 TRANSLATE "%s function `%s' defined at %s(%s) does not use its argument" ""

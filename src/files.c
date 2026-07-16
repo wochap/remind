@@ -66,6 +66,7 @@ typedef struct cheader {
     char const *filename;
     CachedLine *cache;
     int ownedByMe;
+    int lines_cached;
 } CachedFile;
 
 /* A linked list of filenames if we INCLUDE /some/directory/  */
@@ -582,6 +583,7 @@ static int CacheFile(char const *fname, int use_pclose)
         return E_NO_MEM;
     }
     cf->cache = NULL;
+    cf->lines_cached = 0;
     cf->filename = strdup(fname);
     if (!cf->filename) {
         ShouldCache = 0;
@@ -613,11 +615,25 @@ static int CacheFile(char const *fname, int use_pclose)
             }
             return r;
         }
-/* Skip blank chars */
+
+        /* Skip blank chars */
         s = DBufValue(&LineBuffer);
         while (isempty(*s)) s++;
         if (*s && *s!=';' && *s!='#') {
-/* Add the line to the cache */
+            /* Add the line to the cache */
+            cf->lines_cached++;
+            if (cf->lines_cached > MaxCachedLines) {
+                DBufFree(&LineBuffer);
+                DestroyCache(cf);
+                ShouldCache = 0;
+                if (use_pclose) {
+                    PCLOSE(fp);
+                } else {
+                    FCLOSE(fp);
+                }
+                return E_TOO_MANY_CACHED_LINES;
+            }
+
             if (!cl) {
                 cf->cache = NEW(CachedLine);
                 if (!cf->cache) {

@@ -1082,6 +1082,7 @@ static SysVar SysVarArr[] = {
     {"LongMin",        1,  SPECIAL_TYPE, longmin_func,         0,      0 },
     {"LongSec",        1,  SPECIAL_TYPE, longsec_func,         0,      0 },
     {"March",          1,  TRANS_TYPE,   "March",              0,      0 },
+    {"MaxCachedLines", 1,  INT_TYPE,     &MaxCachedLines,      0,      INFINITY },
     {"MaxFullOmits",   0,  CONST_INT_TYPE, NULL,        MAX_FULL_OMITS, 0},
     {"MaxIncludeCmdLines", 1, INT_TYPE,  &MaxIncludeCmdLines,  0,      INFINITY },
     {"MaxLateMinutes", 1,  INT_TYPE,     &MaxLateMinutes,      0,      MINUTES_PER_DAY },
@@ -1591,7 +1592,11 @@ void DumpSysVarByName(char const *name)
     }
 
     v = FindSysVar(name);
-    DumpSysVar(name, v);
+    if (v) {
+        DumpSysVar(v->name, v);
+    } else {
+        DumpSysVar(name, v);
+    }
     return;
 }
 
