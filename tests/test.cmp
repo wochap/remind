@@ -20765,6 +20765,7 @@ PRESERVE i
 ../tests/runinc.rem(1): shell(): RUN disabled
 ../tests/runinc.rem(3): shell(): RUN disabled
 No reminders.
+NOTE: Rem2PS is deprecated.  You should use rem2pdf instead.
 %!PS-Adobe-2.0
 %%DocumentFonts: Helvetica Helvetica-BoldOblique
 %%Creator: Rem2PS
@@ -21869,6 +21870,7 @@ grestore
 showpage
 %%Trailer
 %%Pages: 1
+NOTE: Rem2PS is deprecated.  You should use rem2pdf instead.
 %!PS-Adobe-2.0
 %%DocumentFonts: Helvetica Helvetica-BoldOblique
 %%Creator: Rem2PS

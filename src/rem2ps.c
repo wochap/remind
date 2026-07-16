@@ -333,8 +333,9 @@ int main(int argc, char const *argv[])
             if (!validfile) {
                 if (Verbose) {
                     fprintf(stderr, "Rem2PS: Version %s Copyright (C) 1992-2026 by Dianne Skoll\n\n", VERSION);
-                    fprintf(stderr, "Generating PostScript calendar\n");
+                    fprintf(stderr, "Generating PostScript calendar\n\n");
                 }
+                fprintf(stderr, "NOTE: Rem2PS is deprecated.  You should use rem2pdf instead.\n");
             }
             validfile++;
             DoPsCal();
@@ -1008,6 +1009,7 @@ void Usage(char const *s)
     if (s) fprintf(stderr, "Rem2PS: %s\n\n", s);
 
     fprintf(stderr, "Rem2PS: Produce a PostScript calendar from output of Remind.\n\n");
+    fprintf(stderr, "NOTE: Rem2PS is deprecated.  You should use rem2pdf instead.\n\n");
     fprintf(stderr, "Usage: rem2ps [options]\n\n");
     fprintf(stderr, "Options:\n\n");
     fprintf(stderr, "-v            Print progress messages to standard error\n");
