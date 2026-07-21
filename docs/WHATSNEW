@@ -441,7 +441,7 @@ CHANGES TO REMIND
 
 - MINOR NEW FEATURE: remind: You can use hexadecimal integer constants
   like 0xFE12 in expressions.  This is mostly useful for using
-  codepoint() since Unicode code points are often expressed in
+  mbchar() since Unicode code points are often expressed in
   hexadecimal.
 
 - BUG FIX: remind: When truncating a string when executing DUMPVARS or
