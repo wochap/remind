@@ -34,9 +34,6 @@
 #define VALUE    GetErr(E_VAL)
 #define UNDEF    GetErr(E_UNDEF)
 
-static int IntMin = INT_MIN;
-static int IntMax = INT_MAX;
-
 static hash_table VHashTbl;
 static int SetSysVarHelper(SysVar *v, Value *value);
 static unsigned int HashVal_ignorecase(char const *str);
@@ -1065,8 +1062,8 @@ static SysVar SysVarArr[] = {
     {"HushMode",       0,  INT_TYPE,     &Hush,                0,      0 },
     {"IgnoreOnce",     0,  INT_TYPE,     &IgnoreOnce,          0,      0 },
     {"InfDelta",       0,  INT_TYPE,     &InfiniteDelta,       0,      0 },
-    {"IntMax",         0,  INT_TYPE,     &IntMax,              0,      0 },
-    {"IntMin",         0,  INT_TYPE,     &IntMin,              0,      0 },
+    {"IntMax",         0,  CONST_INT_TYPE, NULL,               INT_MAX,0 },
+    {"IntMin",         0,  CONST_INT_TYPE, NULL,               INT_MIN,0 },
     {"Is",             1,  TRANS_TYPE,   "is",                 0,      0 },
     {"January",        1,  TRANS_TYPE,   "January",            0,      0 },
     {"JSONMode",       0,  INT_TYPE,     &JSONMode,            0,      0 },

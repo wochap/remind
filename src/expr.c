@@ -915,8 +915,10 @@ evaluate_expr_node(expr_node *node, Value *locals, Value *ans, int *nonconst)
 
     case N_SYSVAR:
         /* System var?  Return it and note non-constant expression */
-        nonconst_debug(*nonconst, tr("System variable `$%s' makes expression non-constant"), node_str(node));
-        *nonconst = 1;
+        if (node->u.sysvar->type != CONST_INT_TYPE) {
+            nonconst_debug(*nonconst, tr("System variable `$%s' makes expression non-constant"), node_str(node));
+            *nonconst = 1;
+        }
         r = GetSysVar(node->u.sysvar, ans);
         DBG(debug_evaluation(ans, r, "$%s", node_str(node)));
         return r;
