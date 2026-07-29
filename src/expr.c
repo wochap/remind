@@ -1997,12 +1997,22 @@ static expr_node * parse_function_call(char const **e, int *r, Var *locals, int 
         if (TOKEN_IS(")")) {
             continue;
         }
+        ptr = *e;
         arg = parse_expression_aux(e, r, locals, level+1);
         if (*r != OK) {
             free_expr_tree(node);
             return NULL;
         }
         add_child(node, arg);
+        if (node->type == N_BUILTIN_FUNC) {
+            f = node->u.builtin_func;
+            if (node->num_kids > f->maxargs && f->maxargs != NO_MAX_ARGS) {
+                *r = E_2MANY_ARGS;
+                *e = ptr;
+                free_expr_tree(node);
+                return NULL;
+            }
+        }
         *r = PEEK_TOKEN();
         if (*r != OK) {
                 return free_expr_tree(node);

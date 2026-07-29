@@ -5757,9 +5757,9 @@ set xyz ! "0"
 # Test error messages for function calls with too many / too few args
 
 set zxk version(1)
-../tests/test.rem(1146): version: Too many arguments
 version(1)
-         ^-- here
+        ^-- here
+../tests/test.rem(1146): Too many arguments
 set zxk max()
 ../tests/test.rem(1147): max: Not enough arguments
 max()
