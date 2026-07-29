@@ -87,7 +87,11 @@ exitfunc(void)
 
         UnsetAllUserFuncs();
         print_expr_nodes_stats();
-        fprintf(ErrFp, "Max expr node evaluations per line: %lu\n", MaxExprNodesPerLine);
+        if (MaxExprNodeFilename) {
+            fprintf(ErrFp, "Max expr node evaluations per line: %lu (%s:%d)\n", MaxExprNodesPerLine, MaxExprNodeFilename, MaxExprNodeLineNo);
+        } else {
+            fprintf(ErrFp, "Max expr node evaluations per line: %lu\n", MaxExprNodesPerLine);
+        }
         fprintf(ErrFp, "Total expression node evaluations:  %lu\n", ExpressionNodesEvaluated);
     }
 }

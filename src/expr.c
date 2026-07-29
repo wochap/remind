@@ -887,6 +887,8 @@ evaluate_expr_node(expr_node *node, Value *locals, Value *ans, int *nonconst)
     ExpressionNodesEvaluatedThisLine++;
     if (ExpressionNodesEvaluatedThisLine > MaxExprNodesPerLine) {
         MaxExprNodesPerLine = ExpressionNodesEvaluatedThisLine;
+        MaxExprNodeLineNo = LineNo;
+        MaxExprNodeFilename = GetCurrentFilename();
     }
     switch(node->type) {
     case N_FREE:

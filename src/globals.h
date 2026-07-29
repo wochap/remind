@@ -93,6 +93,8 @@ EXTERN  INIT(   int     ExpressionEvaluationDisabled, 0);
 EXTERN  INIT(   int     ExpressionEvaluationTimeLimit, 0);
 EXTERN  INIT(   unsigned long  ExpressionNodesEvaluated, 0);
 EXTERN  INIT(   unsigned long  MaxExprNodesPerLine, 0);
+EXTERN  INIT(   int            MaxExprNodeLineNo, 0);
+EXTERN  INIT(   char const *   MaxExprNodeFilename, NULL);
 EXTERN  INIT(   unsigned long  ExpressionNodesEvaluatedThisLine, 0);
 EXTERN  INIT(   unsigned long  ExpressionNodeLimitPerLine, 10000000);
 EXTERN  INIT(   volatile sig_atomic_t ExpressionTimeLimitExceeded, 0);
