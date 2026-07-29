@@ -2052,10 +2052,7 @@ static expr_node * parse_function_call(char const **e, int *r, Var *locals, int 
             *e = ptr;
             *r = E_2FEW_ARGS;
         }
-        if (node->num_kids > f->maxargs && f->maxargs != NO_MAX_ARGS) {
-            *e = ptr;
-            *r = E_2MANY_ARGS;
-        }
+        /* Already checked for too many args earlier... */
     }
     if (*r != OK) {
         if (node->type == N_BUILTIN_FUNC) {
