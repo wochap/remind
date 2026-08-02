@@ -434,6 +434,7 @@ proc Initialize {} {
     global DayNames argc argv CommandLine ReminderFile AppendFile Remind PSCmd
     global MondayFirst TwentyFourHourMode
     global TodayDay TodayMonth TodayYear
+    global CurMonth CurYear CurDay
 
     global Option ConfigFile
 
