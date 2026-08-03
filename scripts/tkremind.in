@@ -2016,6 +2016,7 @@ proc GotoDialog {} {
     pack .g.b -expand 1 -fill x
     bind .g <KeyPress-Escape> ".g.b.cancel flash; .g.b.cancel invoke"
     bind .g <Control-KeyPress-w> ".g.b.cancel flash; .g.b.cancel invoke"
+    apply_theme_to_window .g
     CenterWindow .g .
     set oldFocus [focus]
     focus .g.y.e
@@ -5667,6 +5668,7 @@ proc apply_theme_to_window { win } {
     catch { $win configure -foreground $Option(TextColor) }
     catch { $win configure -background $Option(BackgroundColor) }
     catch { $win configure -activeforeground $Option(TextColor) }
+    catch { $win configure -insertbackground $Option(TextColor) }
     catch { $win configure -activebackground $Option(BackgroundColor) }
     catch { $win configure -highlightcolor $Option(LineColor) }
     catch { $win configure -highlightbackground $Option(WinBackground) }
