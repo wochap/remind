@@ -223,6 +223,11 @@ set OptDescr(HeadingFont) "Font to use in calendar headings in Tk font format"
 set Option(BackgroundColor) "#d9d9d9"
 set OptDescr(BackgroundColor) "Default background color of calendar boxes"
 
+set Option(ActiveEntryBackgroundColor) "#ffffff"
+set OptDescr(ActiveEntryBackgroundColor) "Background color for active text entries"
+set Option(DisabledEntryBackgroundColor) "#d9d9d9"
+set OptDescr(DisabledEntryBackgroundColor) "Background color for disabled text entries"
+
 set Option(TextColor) "#000000"
 set OptDescr(TextColor) "Default text color in calendar boxes"
 
@@ -1053,10 +1058,16 @@ proc EditOptions {} {
     label $w.tooltipbgcolor -text "Tooltip background:"
     button $w.btooltipbgcolor -background $Option(TooltipBgColor) -command [list PickColor TooltipBgColor $w.btooltipbgcolor] -text ...
 
+    label $w.aeecolor -text "Active entry background:"
+    button $w.baeecolor -background $Option(ActiveEntryBackgroundColor) -command [list PickColor ActiveEntryBackgroundColor $w.baeecolor] -text ...
+    label $w.deecolor -text "Disabled entry background:"
+    button $w.bdeecolor -background $Option(DisabledEntryBackgroundColor) -command [list PickColor DisabledEntryBackgroundColor $w.bdeecolor] -text ...
     grid $w.headcolor $w.bheadcolor $w.wincolor $w.bwincolor -in $w.colors1
     grid $w.tbgcolor $w.tbbgcolor $w.gridcolor $w.gridbcolor -in $w.colors1
+    grid $w.aeecolor $w.baeecolor $w.deecolor $w.bdeecolor -in $w.colors1
+
     grid $w.tooltiptextcolor $w.btooltiptextcolor $w.tooltipbgcolor $w.btooltipbgcolor -in $w.colors1
-    
+
     grid columnconfigure $w.colors1 0 -weight 1
     grid columnconfigure $w.colors1 2 -weight 1
     frame $w.sep1 -bd 1 -relief sunken
@@ -3110,6 +3121,7 @@ proc BrowseForFile {w title {oktext "OK"} {showdots 0} {filter "*"}} {
     wm protocol $w WM_DELETE_WINDOW "$w.cancel flash; $w.cancel invoke"
     bindtags $w.list "Listbox $w.list $w all"
     CenterWindow $w .
+    apply_theme_to_window $w
     set oldFocus [focus]
     tkwait visibility $w
     focus $w.entry
@@ -5325,6 +5337,8 @@ proc set_default_colors { w } {
     set tmpOpt(WinBackground) "#d9d9d9"
     set tmpOpt(TooltipBgColor) "#FFFFC0"
     set tmpOpt(TooltipTextColor) "#000000"
+    set tmpOpt(ActiveEntryBackgroundColor) "#ffffff"
+    set tmpOpt(DisabledEntryBackgroundColor) "#d9d9d9"
     update_color_buttons $w
 }
 
@@ -5338,6 +5352,8 @@ proc set_dark_colors { w } {
     set tmpOpt(WinBackground) "#000000"
     set tmpOpt(TooltipBgColor) "#303000"
     set tmpOpt(TooltipTextColor) "#ffffff"
+    set tmpOpt(ActiveEntryBackgroundColor) "#000000"
+    set tmpOpt(DisabledEntryBackgroundColor) "#333333"
     update_color_buttons $w
 }
 
@@ -5351,6 +5367,8 @@ proc update_color_buttons { w } {
     $w.bwincolor configure -background $tmpOpt(WinBackground)
     $w.btooltipbgcolor configure -background $tmpOpt(TooltipBgColor)
     $w.btooltiptextcolor configure -background $tmpOpt(TooltipTextColor)
+    $w.baeecolor configure -background $tmpOpt(ActiveEntryBackgroundColor)
+    $w.bdeecolor configure -background $tmpOpt(DisabledEntryBackgroundColor)
 }
 
 proc set_button_to_queue {} {
@@ -5664,15 +5682,49 @@ proc get_win_offset { date } {
 proc apply_theme_to_window { win } {
     global Option
     set c [winfo class $win]
-    catch { $win configure -selectcolor $Option(BackgroundColor) }
-    catch { $win configure -foreground $Option(TextColor) }
-    catch { $win configure -background $Option(BackgroundColor) }
-    catch { $win configure -activeforeground $Option(TextColor) }
-    catch { $win configure -insertbackground $Option(TextColor) }
-    catch { $win configure -activebackground $Option(BackgroundColor) }
-    catch { $win configure -highlightcolor $Option(LineColor) }
-    catch { $win configure -highlightbackground $Option(WinBackground) }
-
+    switch -exact -- $c {
+        Button {
+            catch { $win configure -selectcolor $Option(BackgroundColor) }
+            catch { $win configure -foreground $Option(LabelColor) }
+            catch { $win configure -background $Option(BackgroundColor) }
+            catch { $win configure -activeforeground $Option(LabelColor) }
+            catch { $win configure -insertbackground $Option(LabelColor) }
+            catch { $win configure -activebackground $Option(BackgroundColor) }
+            catch { $win configure -highlightcolor $Option(LineColor) }
+            catch { $win configure -highlightbackground $Option(WinBackground) }
+        }
+        Entry {
+            catch { $win configure -foreground $Option(TextColor) }
+            catch { $win configure -activeforeground $Option(TextColor) }
+            catch { $win configure -insertbackground $Option(TextColor) }
+            catch { $win configure -activebackground $Option(ActiveEntryBackgroundColor) }
+            catch { $win configure -background $Option(ActiveEntryBackgroundColor) }
+            catch { $win configure -disabledbackground $Option(DisabledEntryBackgroundColor) }
+            catch { $win configure -highlightcolor $Option(LineColor) }
+            catch { $win configure -highlightbackground $Option(WinBackground) }
+        }
+        Checkbutton -
+        Radiobutton {
+            catch { $win configure -selectcolor $Option(BackgroundColor) }
+            catch { $win configure -foreground $Option(TextColor) }
+            catch { $win configure -background $Option(BackgroundColor) }
+            catch { $win configure -activeforeground $Option(TextColor) }
+            catch { $win configure -insertbackground $Option(TextColor) }
+            catch { $win configure -activebackground $Option(BackgroundColor) }
+            catch { $win configure -highlightcolor $Option(LineColor) }
+            catch { $win configure -highlightbackground $Option(WinBackground) }
+        }
+        default {
+            catch { $win configure -selectcolor $Option(BackgroundColor) }
+            catch { $win configure -foreground $Option(TextColor) }
+            catch { $win configure -background $Option(BackgroundColor) }
+            catch { $win configure -activeforeground $Option(TextColor) }
+            catch { $win configure -insertbackground $Option(TextColor) }
+            catch { $win configure -activebackground $Option(BackgroundColor) }
+            catch { $win configure -highlightcolor $Option(LineColor) }
+            catch { $win configure -highlightbackground $Option(WinBackground) }
+        }
+    }
     foreach w [winfo children $win] {
         apply_theme_to_window $w
     }
