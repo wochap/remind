@@ -1804,6 +1804,7 @@ proc DoPrintHelper {} {
     bind .p <Control-KeyPress-w> ".p.cancel flash; .p.cancel invoke"
     bind .p <KeyPress-Return> ".p.print flash; .p.print invoke"
     set PrintStatus 2
+    apply_theme_to_window .p
     CenterWindow .p .
     tkwait visibility .p
     set oldFocus [focus]
@@ -2397,6 +2398,7 @@ proc CreateModifyDialog {w i args} {
     }
     set ModifyDialogResult 0
 
+    apply_theme_to_window $w
     # Center the window on the root
     CenterWindow $w .
 }
@@ -5658,4 +5660,20 @@ proc get_win_offset { date } {
     dict get $DateToWinOffset $date
 }
 
+proc apply_theme_to_window { win } {
+    global Option
+    set c [winfo class $win]
+    catch { $win configure -selectcolor $Option(BackgroundColor) }
+    catch { $win configure -foreground $Option(TextColor) }
+    catch { $win configure -background $Option(BackgroundColor) }
+    catch { $win configure -activeforeground $Option(TextColor) }
+    catch { $win configure -activebackground $Option(BackgroundColor) }
+    catch { $win configure -highlightcolor $Option(LineColor) }
+    catch { $win configure -highlightbackground $Option(WinBackground) }
+
+    foreach w [winfo children $win] {
+        apply_theme_to_window $w
+    }
+}
 main
+
