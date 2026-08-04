@@ -5700,9 +5700,7 @@ proc apply_theme_to_window { win } {
             catch { $win configure -selectcolor $Option(BackgroundColor) }
             catch { $win configure -foreground $Option(LabelColor) }
             catch { $win configure -background $Option(BackgroundColor) }
-            catch { $win configure -activeforeground $Option(LabelColor) }
             catch { $win configure -insertbackground $Option(LabelColor) }
-            catch { $win configure -activebackground $Option(BackgroundColor) }
             catch { $win configure -highlightcolor $Option(LineColor) }
             catch { $win configure -highlightbackground $Option(WinBackground) }
         }
