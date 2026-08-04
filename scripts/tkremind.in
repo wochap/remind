@@ -1119,6 +1119,9 @@ proc EditOptions {} {
     bind $w <Destroy> {catch { tk fontchooser hide } }
     bind $w <KeyPress-Escape> "$w.cancel flash; $w.cancel invoke"
     bind $w <Control-KeyPress-w> "$w.cancel flash; $w.cancel invoke"
+
+    apply_theme_to_window $w
+    update_color_buttons $w
     CenterWindow $w .
 }
 
