@@ -5734,7 +5734,7 @@ proc apply_theme_to_window { win } {
         }
         Checkbutton -
         Radiobutton {
-            catch { $win configure -selectcolor $Option(BackgroundColor) }
+            catch { $win configure -selectcolor $Option(ActiveEntryBackgroundColor) }
             catch { $win configure -foreground $Option(TextColor) }
             catch { $win configure -background $Option(BackgroundColor) }
             catch { $win configure -activeforeground $Option(TextColor) }
