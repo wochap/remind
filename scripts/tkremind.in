@@ -2995,6 +2995,7 @@ proc EditReminder {rem args} {
     bind .edit <Control-KeyPress-w> ".edit.but1 flash; .edit.but1 invoke"
     wm protocol .edit WM_DELETE_WINDOW { .edit.but1 flash; .edit.but1 invoke }
     set ModifyDialogResult 0
+    apply_theme_to_window .edit
     CenterWindow .edit .
     bind .edit <ButtonPress-1> {
         catch { raise .mod }
