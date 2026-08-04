@@ -1237,6 +1237,8 @@ proc WriteOptionsToFile {} {
     puts $f "# Format of each line is 'key value' where 'key'"
     puts $f "# specifies the option name, and 'value' is a"
     puts $f "# *legal Tcl list element* specifying the option value."
+    puts $f ""
+    puts $f "# Blank lines and lines beginning with # are ignored."
     foreach name [lsort [array names Option]] {
 	puts $f ""
 	puts $f "# $OptDescr($name)"
