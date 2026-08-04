@@ -1280,6 +1280,7 @@ proc LoadOptions {} {
     if {$problem} {
 	return
     }
+    set seen_version 0
     while {[gets $f line] >= 0} {
 	if {[string match "#*" $line]} {
             continue
@@ -1295,7 +1296,9 @@ proc LoadOptions {} {
             continue
         }
         set Option($key) $val
-        set Seen($key) 1
+        if {"$key" == "Version"} {
+            set seen_version 1
+        }
     }
     close $f
     if {[regexp -- {-m.*} $Option(ExtraRemindArgs)]} {
@@ -1321,12 +1324,12 @@ proc LoadOptions {} {
     # Delete obsolete option
     catch { unset Option(PrintEncoding) }
 
-    if {![info exists Seen(Version)]} {
+    if {! $seen_version } {
         set Option(Version) "00.00.00"
     }
     # If we're using dark theme, set sane
     # ActiveEntryBackgroundColor and DisabledEntryBackgroundColor
-    if {![info exists Seen(ActiveEntryBackgroundColor)]} {
+    if {[string compare "$Option(Version)" "06.02.10"] < 0} {
         if { $Option(TextColor) == "#ffffff" } {
             set Option(ActiveEntryBackgroundColor) "#000000"
             set Option(DisabledEntryBackgroundColor) "#333333"
