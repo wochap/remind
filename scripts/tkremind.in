@@ -2043,7 +2043,7 @@ proc GotoDialog {} {
     bind .g <KeyPress-Escape> ".g.b.cancel flash; .g.b.cancel invoke"
     bind .g <Control-KeyPress-w> ".g.b.cancel flash; .g.b.cancel invoke"
     apply_theme_to_window .g
-    CenterWindow .g .
+    CenterWindow .g .b.goto
     set oldFocus [focus]
     focus .g.y.e
     catch {focus $oldFocus}
