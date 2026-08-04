@@ -1278,6 +1278,7 @@ proc LoadOptions {} {
             continue
         }
         set Option($key) $val
+        set Seen($key) 1
     }
     close $f
     if {[regexp -- {-m.*} $Option(ExtraRemindArgs)]} {
@@ -1302,6 +1303,15 @@ proc LoadOptions {} {
 
     # Delete obsolete option
     catch { unset Option(PrintEncoding) }
+
+    # If we're using dark theme, set sane
+    # ActiveEntryBackgroundColor and DisabledEntryBackgroundColor
+    if {![info exists Seen(ActiveEntryBackgroundColor)]} {
+        if { $Option(TextColor) == "#ffffff" } {
+            set Option(ActiveEntryBackgroundColor) "#000000"
+            set Option(DisabledEntryBackgroundColor) "#333333"
+        }
+    }
 }
 
 
