@@ -175,6 +175,9 @@ proc GetRemindVersion {} {
 # GLOBAL VARIABLES
 #---------------------------------------------------------------------------
 
+set Option(Version) "@VERSION@"
+set OptDescr(Version) "The version of TkRemind that last wrote this option file"
+
 set Option(ConfirmQuit) 0
 set OptDescr(ConfirmQuit) "(0/1) If 1, TkRemind prompts you to confirm 'Quit' operation"
 set Option(AutoClose) 1
@@ -1242,10 +1245,19 @@ proc WriteOptionsToFile {} {
     puts $f "# *legal Tcl list element* specifying the option value."
     puts $f ""
     puts $f "# Blank lines and lines beginning with # are ignored."
-    foreach name [lsort [array names Option]] {
+
+    # Write the version first
+    if { ! [string match "@*" "@VERSION@"] } {
 	puts $f ""
-	puts $f "# $OptDescr($name)"
-	puts $f [list $name $Option($name)]
+	puts $f "# $OptDescr(Version)"
+	puts $f [list Version "@VERSION@"]
+    }
+    foreach name [lsort [array names Option]] {
+        if { $name != "Version" } {
+            puts $f ""
+            puts $f "# $OptDescr($name)"
+            puts $f [list $name $Option($name)]
+        }
     }
     puts $f ""
     close $f
@@ -1309,6 +1321,9 @@ proc LoadOptions {} {
     # Delete obsolete option
     catch { unset Option(PrintEncoding) }
 
+    if {![info exists Seen(Version)]} {
+        set Option(Version) "00.00.00"
+    }
     # If we're using dark theme, set sane
     # ActiveEntryBackgroundColor and DisabledEntryBackgroundColor
     if {![info exists Seen(ActiveEntryBackgroundColor)]} {
