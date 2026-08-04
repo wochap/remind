@@ -1274,7 +1274,7 @@ proc WriteOptionsToFile {} {
 #  Loads options from $ConfigFile
 #***********************************************************************
 proc LoadOptions {} {
-    global Option ConfigFile
+    global Option ConfigFile RemindErrors
     global MondayFirst
     set problem [catch {set f [open "$ConfigFile" "r"]}]
     if {$problem} {
@@ -1330,6 +1330,7 @@ proc LoadOptions {} {
     # If we're using dark theme, set sane
     # ActiveEntryBackgroundColor and DisabledEntryBackgroundColor
     if {[string compare "$Option(Version)" "06.02.10"] < 0} {
+        set RemindErrors "This release of TkRemind has additional color options for theming.  Please open the Options... dialog, adjust as required, and save options.  This warning will appear each time you start TkRemind unless you save options, even if you don't actually change any options.  So do yourself a favour and save options."
         if { $Option(TextColor) == "#ffffff" } {
             set Option(ActiveEntryBackgroundColor) "#000000"
             set Option(DisabledEntryBackgroundColor) "#333333"
@@ -3706,7 +3707,7 @@ proc CommandWritable { f msg } {
 
 
 proc main {} {
-    global ConfigFile
+    global ConfigFile RemindErrors
 
     font create CalboxFont {*}[font actual TkFixedFont]
     font create HeadingFont {*}[font actual TkDefaultFont]
@@ -3734,6 +3735,9 @@ proc main {} {
     FillCalWindow
     StartBackgroundRemindDaemon
     DisplayTimeContinuously
+    if {"$RemindErrors" != ""} {
+        set_button_to_warnings
+    }
 }
 
 #***********************************************************************
@@ -5406,6 +5410,10 @@ proc update_color_buttons { w } {
 }
 
 proc set_button_to_queue {} {
+    global RemindErrors
+    if {"$RemindErrors" != ""} {
+        return
+    }
     global Option
     balloon_set_help .b.queue "See the queue of pending reminders (debugging purposes only)"
     .b.queue configure -text {Queue...} -command {DoQueue} -foreground $Option(LabelColor) -background $Option(WinBackground)
@@ -5414,6 +5422,11 @@ proc set_button_to_errors {} {
     balloon_set_help .b.queue "See the list of errors from the most recent operation"
     .b.queue configure -text {Errors...} -command {ShowErrors} -bg #FF5555 -fg black
 }
+proc set_button_to_warnings {} {
+    balloon_set_help .b.queue "Click here for important information"
+    .b.queue configure -text {Warnings...} -command {ShowErrors} -bg #FF5555 -fg black
+}
+
 
 proc FillManWindow { cmd jump w } {
     global env
@@ -5635,7 +5648,7 @@ proc ShowErrors {} {
     toplevel $w -background $Option(WinBackground)
     text $w.t -width 80 -height 30 -wrap word -yscrollcommand "$w.sb set" -foreground $Option(TextColor) -background $Option(BackgroundColor) -font [font actual TkFixedFont]
     scrollbar $w.sb -orient vertical -command "$w.t yview"
-    button $w.ok -text OK -command DoneShowingErrors -foreground $Option(TextColor) -background $Option(BackgroundColor) -highlightthickness 1 -highlightcolor $Option(LineColor) -highlightbackground $Option(WinBackground)
+    button $w.ok -text OK -command DoneShowingErrors -foreground $Option(LabelColor) -background $Option(BackgroundColor) -highlightthickness 1 -highlightcolor $Option(LineColor) -highlightbackground $Option(WinBackground)
     grid $w.t -row 0 -column 0 -sticky nsew
     grid $w.sb -row 0 -column 1 -sticky ns
     grid $w.ok -row 1 -column 0 -stick w
