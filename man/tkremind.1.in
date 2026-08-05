@@ -361,11 +361,25 @@ font used to draw calendar items in the calendar boxes.
 Similar to Change entry font, but applies to calendar heading
 (the month and day names and the day numbers.)
 
+.TP
+.B Colors
+The remaining section of the Options dialog lets you configure
+colors for various parts of the TkRemind user interface.  You can
+change individual colors, or preset them to a built-in theme by
+clicking \fBLight Theme\fR or \fBDark Theme\fR.
+.RS
 .PP
-Once you've configured the options the way you like them,
-press \fBApply Options\fR to put them into effect, \fBSave Options\fR
-to put them into effect and save them in $HOME/.config/tkremindrc, or
-\fBCancel\fR to cancel any changes you made.
+If you accidentally make the user-interface unreadable through an
+unfortunate choice of colors, you can always find the Options dialog
+again by moving the mouse pointer along the bottom row of buttons to
+find Options...  and then reset the theme to Light Theme or Dark Theme
+once the Options dialog pops up.
+.RE
+.PP
+Once you've configured the options the way you like them, press
+\fBSave Options\fR to put them into effect and to save them in
+$HOME/.config/tkremindrc, or \fBCancel\fR to cancel any changes you
+made.
 
 .SH IMMEDIATE UPDATES
 
