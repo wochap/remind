@@ -10,12 +10,12 @@ CHANGES TO REMIND
   added.  If you've customized your colors (ie, are using something
   other than the built-in Light and Dark themes) you will need to set
   the new options "Active entry background" and "Disabled entry
-  backgroubd".  TkRemind will warn you if your options file was
+  background".  TkRemind will warn you if your options file was
   created by an older version of TkRemind, and will prompt you to
   update and save the options.
 
 - IMPROVEMENT: TkRemind: If you resize the "Help" window, the man page
-  text is reflowed to adjust to the new size.
+  text is re-flowed to adjust to the new size.
 
 - DOCUMENTATION FIX: TkRemind: The tkremind man page has been updated
   and some inaccuracies corrected.
