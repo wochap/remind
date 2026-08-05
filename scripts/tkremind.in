@@ -1251,6 +1251,10 @@ proc WriteOptionsToFile {} {
 	puts $f ""
 	puts $f "# $OptDescr(Version)"
 	puts $f [list Version "@VERSION@"]
+
+        # We've rewritten the options file, so mark
+        # it up-to-date internally.
+        set Option(Version) "@VERSION@"
     }
     foreach name [lsort [array names Option]] {
         if { $name != "Version" } {
@@ -1259,6 +1263,7 @@ proc WriteOptionsToFile {} {
             puts $f [list $name $Option($name)]
         }
     }
+
     puts $f ""
     close $f
     file rename -force "$ConfigFile.tmp" $ConfigFile
