@@ -1,5 +1,31 @@
 CHANGES TO REMIND
 
+* VERSION 06.02.10 - 2026-08-05
+
+- IMPROVEMENT: TkRemind: Theme *all* dialogs and popups according to
+  the selected color scheme.  No more surprisingly-bright popups when
+  you go to create a new reminder in Dark Mode.
+
+  Note that to fully support this, two new color options have been
+  added.  If you've customized your colors (ie, are using something
+  other than the built-in Light and Dark themes) you will need to set
+  the new options "Active entry background" and "Disabled entry
+  backgroubd".  TkRemind will warn you if your options file was
+  created by an older version of TkRemind, and will prompt you to
+  update and save the options.
+
+- IMPROVEMENT: TkRemind: If you resize the "Help" window, the man page
+  text is reflowed to adjust to the new size.
+
+- DOCUMENTATION FIX: TkRemind: The tkremind man page has been updated
+  and some inaccuracies corrected.
+
+- IMPROVEMENT: Remind: Better reporting of "too many arguments" error
+  when parsing expressions.
+
+- BUG FIX: TkRemind: If the date rolls over from one month to the
+  next, properly update the calendar display to the new month.
+
 * VERSION 06.02.09 - 2026-07-28
 
 - IMPROVEMENT: remind: When compiling an expression, keep pointers to
